@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>My diary app</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      #outer
+{
+    width:100%;
+}
+.inner
+{
+    display: inline-block;
+}
+    </style>
+
+    
+  </head>
+  <body>
+    
+<header>
+  
+  <div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a href="/" class="navbar-brand d-flex align-items-center">
+        <strong>My diary</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="container py-5">
+  <div class="row mb-4">
+    <div class="col-lg-8 mx-auto text-center">
+        <h1 class="display-6">New Entry</h1>
+    </div>
+</div> <!-- End -->
+  <div class="row mt-4">
+      <div class="col-lg-6 mx-auto">
+          <div class="card ">
+              <div class="card-header">
+ 
+                  <!-- Credit card form content -->
+                  <div class="tab-content">
+                      <!-- credit card info-->
+                      <div class="tab-pane fade show active pt-3">
+                          <form method="POST" action="/createEntry">
+                              <div class="form-group"> <label for="title">
+                                      <h6>Entry Name</h6>
+                                  </label> <input type="text" name="title" id="title" placeholder="Your Title Here..." required class="form-control "> </div>
+                              
+
+                                  <div class="form-group"> <label for="entry">
+                                    <h6>Entry</h6>
+                                </label>
+
+                                <textarea class="input-group" name="entry" id="entry" rows="10" cols="50" placeholder="Your Entry Here..." class="form-control " required></textarea>
+                            </div>
+                              
+                                  <div class="form-group"> <label for="signature">
+                                      <h6>Signature</h6>
+                                  </label>
+                                  <div class="input-group"> <input type="text" id="signature" name="signature" placeholder="Your Signature Here..." class="form-control " required>
+                                      
+                                  </div>
+                              </div>
+      
+                              <div class="card-footer" id="outer"> <a href="/getAllEntries" class="subscribe btn btn-primary btn-block shadow-sm"><i class="fas fa-arrow-left"></i> Go Back </a> <button type="submit" value = "submit" class="subscribe btn btn-primary btn-block shadow-sm"> Save :) </button>
+                          </form>
+                      </div>
+                  </div> <!-- End -->
+    
+                  <!-- End -->
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+
+
+<footer class="text-muted py-5">
+  <div class="container text-center">
+    <hr>
+    &copy; <span id="year"></span>
+ </div>
+</footer>
+
+
+    <script src="/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+      document.getElementById("year").innerHTML = new Date().getFullYear();
+      
+  </script>
+      
+  </body>
+</html>
